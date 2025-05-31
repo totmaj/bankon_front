@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --dark-color: #080a0e;
+  --secondary-dark-color: #11141b;
+  --primary-color: #1beaa5;
+  --primary-color-light: #1beaa53c;
+  --gray-color: #979ba2;
+  --dark-gray-color: #515151;
+  --darkest-gray-color: #2a2c31;
+  --light-gray-color: #b7b7b7;
+  --secondary-color: #f5c59f;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/fonts/Quicksand-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/fonts/Quicksand-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/fonts/Quicksand-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/fonts/Quicksand-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/fonts/Quicksand-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  --color-primary: #eb1616;
+  --color-secondary: #191c24;
+  --color-light: #6c7293;
+  --color-dark: #000000;
+}
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+   background-color: var(--secondary-dark-color);
+}
+
+.primary-button {
+  box-shadow: 0 0 3px var(--primary-color);
+}
+
+.primary-button:hover {
+  box-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color),
+    0 0 20px #fff inset;
+}
+
+.input::placeholder {
+  color: var(--light-gray-color);
+}
+
+.input:focus,
+.select:focus {
+  box-shadow: 0 0 3px var(--primary-color);
+}
+
+.main {
+  background-image: linear-gradient(
+    171.08deg,
+    #010101 -11.16%,
+    #141921 6.1%,
+    #0a0d11 49.05%,
+    #000 93.22%
+  );
+
+  height: calc(100vh - 4.5rem);
+}
+
+.home {
+  height: calc(100vh - 4.5rem);
+}
+
+.gradient-border {
+  background: #ffffff;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(148, 187, 233, 0) 100%
+  );
+}
+
+.hero-title {
+  line-height: 1.2;
+}
+
+.features-content {
+  background: #11141b;
+  background: linear-gradient(
+    0deg,
+    rgba(17, 20, 27, 1) 35%,
+    rgba(17, 20, 27, 0.67) 100%
+  );
+}
