@@ -16,7 +16,7 @@ const Header: React.FC<Param> = ({ toggleMobileSidebar, toggleSidebar }) => {
   return (
     <>
       {/* Top navigation */}
-      <div className="h-16 bg-secondary flex items-center justify-between px-4">
+      <div className="h-16 bg-secondary flex items-center justify-between px-4 ">
         <button
           className="md:hidden text-gray-600 focus:outline-none"
           onClick={toggleMobileSidebar}

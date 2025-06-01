@@ -59,9 +59,11 @@
 
 body {
   font-family: "Quicksand", sans-serif;
-   background-color: var(--secondary-dark-color);
+  background-color: var(--secondary-dark-color);
 }
-
+button {
+  cursor: pointer;
+}
 .primary-button {
   box-shadow: 0 0 3px var(--primary-color);
 }
@@ -88,7 +90,6 @@ body {
     #0a0d11 49.05%,
     #000 93.22%
   );
-
 }
 
 .home {

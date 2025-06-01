@@ -8,7 +8,7 @@ const SignUp: React.FC = () => {
     <div className=" flex flex-col w-full">
       <Header />
       <div className="flex flex-row ">
-        <main className=" main w-full   flex">
+        <main className=" main w-full  flex h-screen  pb-16">
           <AuthPageContainer>
             <SignUpForm />
           </AuthPageContainer>

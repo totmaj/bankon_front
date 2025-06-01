@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   const { token } = useContext(AppContext);
 
   return (
-    <header className="bg-[var(--dark-color)] h-[4.5rem] flex justify-between items-center px-4 border-b border-b-[var(--darkest-gray-color)]">
+    <header className="bg-[var(--dark-color)] z-50 fixed w-full top-0 h-[4.5rem] flex justify-between items-center px-4 border-b border-b-[var(--darkest-gray-color)]">
       <Logo />
 
       {token ? (  
