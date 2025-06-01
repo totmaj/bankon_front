@@ -1,8 +1,8 @@
 import React from "react";
 
-import Header from "../../components/layouts/main/header/Header.tsx";
-import AuthPageContainer from "./auth/AuthPageContainer.tsx";
-import LoginForm from "./auth/LoginForm.tsx";
+import Header from "../../components/layouts/main/header/Header";
+import AuthPageContainer from "./auth/AuthPageContainer";
+import LoginForm from "./auth/LoginForm";
 
 const Login: React.FC = () => {
   return (

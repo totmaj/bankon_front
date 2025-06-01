@@ -1,7 +1,7 @@
 import React from "react";
-import AuthPageContainer from "./auth/AuthPageContainer.tsx";
-import SignUpForm from "./auth/SignUpForm.tsx";
-import Header from "../../components/layouts/main/header/Header.tsx";
+import AuthPageContainer from "./auth/AuthPageContainer";
+import SignUpForm from "./auth/SignUpForm";
+import Header from "../../components/layouts/main/header/Header";
 
 const SignUp: React.FC = () => {
   return (

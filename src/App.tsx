@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/public/Login.tsx";
-import MainLayout from "./components/layouts/main/MainLayout.tsx";
-import DashboardLayout from "./components/layouts/dashboard/DashboardLayout.tsx";
+import Login from "./pages/public/Login";
+import MainLayout from "./components/layouts/main/MainLayout";
+import DashboardLayout from "./components/layouts/dashboard/DashboardLayout";
 import React, { useEffect, useMemo, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "./styles/global.css";
 import { User } from "./models/User.js";
 import AppContext, { ContextType } from "./context/AppContext";
-import SignUp from "./pages/public/SignUp.tsx";
-import Home from "./pages/public/home/Home.tsx";
+import SignUp from "./pages/public/SignUp";
+import Home from "./pages/public/home/Home";
 import UserRoutes from "./routes/UserRoutes";
 const App: React.FC = () => {
   useEffect(() => {

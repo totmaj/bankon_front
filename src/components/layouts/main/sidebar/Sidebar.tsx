@@ -56,7 +56,7 @@ const sidebarItems = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar:React.FC = () => {
   return (
     <div className="w-[15rem]  bg-secondary-dark     border-r border-r-darkest-gray-color p-[1.5rem]  left-0 top-16 ">
       <nav>

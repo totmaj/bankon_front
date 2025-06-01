@@ -1,6 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-
-const SidebarItem = ({ href, title, className = "", icon }) => {
+interface Props {
+  href: string;
+  title: string;
+  className?: string;
+  icon?: React.ReactNode;
+}
+import React from "react";
+const SidebarItem :React.FC<Props> = ({ href, title, className = "", icon }) => {
   const location = useLocation();
 
   const isActive = location.pathname === href;

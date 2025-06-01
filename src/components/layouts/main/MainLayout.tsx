@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./header/Header.tsx";
-import Sidebar from "./sidebar/Sidebar.jsx";
+import Header from "./header/Header";
+import Sidebar from "./sidebar/Sidebar";
 
 interface Param {
   children: any;

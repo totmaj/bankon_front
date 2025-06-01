@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 
-import { loginUser } from "../../../redux/authSlice.js";
-
-import AuthFormTemplate from "./AuthFormTemplate.tsx";
+import AuthFormTemplate from "./AuthFormTemplate";
 import Input from "../../../components/ui/Input.js";
-import PrimaryLink from "../../../components/ui/PrimaryLink.tsx";
+import PrimaryLink from "../../../components/ui/PrimaryLink";
 
 const LoginForm = () => {
   const [form, setForm] = useState({ email: "", password: "" });
