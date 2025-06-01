@@ -6,9 +6,8 @@ import Home from "../pages/public/home/Home";
 export default function PublicRoutes() {
   return (
     <Routes>
-      {/* Public Routes */}
       <Route path="/register" element={<Signup />} />
-      {/* Default Redirect */}
+      <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/*" element={<Home />} />
     </Routes>

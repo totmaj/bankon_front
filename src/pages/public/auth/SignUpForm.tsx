@@ -1,10 +1,10 @@
-import React, { useState} from "react";
-
+import React, { useState } from "react";
 
 import Input from "../../../components/ui/Input";
-import AuthFormTemplate from "./AuthFormTemplate";
 import Select from "../../../components/ui/Select";
 import PrimaryLink from "../../../components/ui/PrimaryLink";
+import PrimaryButton from "../../../components/ui/PrimaryButton";
+import { signup } from "../../../service/Requests";
 
 const clientTypeOptions = [
   { label: "Individual", value: "individual" },
@@ -21,28 +21,34 @@ const SignUpForm: React.FC = () => {
     referral_code: "",
   });
 
+  const onSubmit = () => {
+    signup(form)
+      .then((res) => {
+        console.log(res);
+        debugger;
+      })
+      .catch(() => {});
+  };
   return (
-    <AuthFormTemplate
-      title="Sign Up"
-      subTitle="Create your account to get started"
-      type="signup"
-      buttonText={true ? "Signing up..." : "Sign Up"}
-      buttonDisabled={false}
-      afterButtonElement={
-        <p className="text-[var(--light-gray-color)] text-[0.875rem] mt-8 text-center">
-          Already have an account?{" "}
-          <PrimaryLink href="/login">
-            <>Login</>
-          </PrimaryLink>
+    <div className="login-form w-[35rem] mx-auto p-6 md:px-10 md:py-12 mt-32  md:bg-[var(--secondary-dark-color)] rounded-3xl">
+      <div className="flex flex-col gap-[0.5rem] mb-[3rem]">
+        <h2 className="text-xl font-semibold text-center text-white">
+          {"Sign Up"}
+        </h2>
+        <p className="text-center text-[var(--light-gray-color)]">
+          {"Create your account to get started"}
         </p>
-      }
-    >
+      </div>
+
       <Input
         type="text"
         name="username"
         value={form.username}
         placeholder="Username"
         required
+        onChange={(e) => {
+          setForm({ ...form, username: e.target.value });
+        }}
       />
 
       <Input
@@ -51,6 +57,9 @@ const SignUpForm: React.FC = () => {
         value={form.email}
         placeholder="Email"
         required
+        onChange={(e) => {
+          setForm({ ...form, email: e.target.value });
+        }}
       />
 
       <Input
@@ -59,6 +68,9 @@ const SignUpForm: React.FC = () => {
         value={form.password}
         placeholder="Password"
         required
+        onChange={(e) => {
+          setForm({ ...form, password: e.target.value });
+        }}
       />
 
       <Input
@@ -67,15 +79,17 @@ const SignUpForm: React.FC = () => {
         value={form.confirmPassword}
         placeholder="Confirm Password"
         required
+        onChange={(e) => {
+          setForm({ ...form, confirmPassword: e.target.value });
+        }}
       />
 
       <Select
         options={clientTypeOptions}
         value={form.client_type}
-        // onChange={(val) => {
-        //   setForm((prev) => ({ ...prev, client_type: val }));
-        //   setErrors((prev) => ({ ...prev, client_type: "" }));
-        // }}
+        onChange={(e) => {
+          setForm({ ...form, client_type: e });
+        }}
         placeholder="Client Type"
       />
 
@@ -84,12 +98,26 @@ const SignUpForm: React.FC = () => {
         name="referral_code"
         value={form.referral_code}
         placeholder="Referral Code (optional)"
+        onChange={(e) => {
+          setForm({ ...form, referral_code: e.target.value });
+        }}
       />
 
       {/* {error && (
         <p className="text-red-500 text-sm text-center mt-4">{error}</p>
       )} */}
-    </AuthFormTemplate>
+
+      <PrimaryButton onClick={onSubmit} type="submit">
+        {"Sign Up"}
+      </PrimaryButton>
+
+      <p className="text-[var(--light-gray-color)] text-[0.875rem] mt-8 text-center">
+        Already have an account?
+        <PrimaryLink href="/login">
+          <>Login</>
+        </PrimaryLink>
+      </p>
+    </div>
   );
 };
 

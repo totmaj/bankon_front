@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 interface param {
   href: string;
@@ -13,13 +14,13 @@ const PrimaryLink: React.FC<param> = ({
   target = "_self",
 }) => {
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       target={target}
       className={`text-[var(--primary-color)] opacity-90 transition-all duration-300 hover:opacity-100 ${className}`}
     >
       {children}
-    </a>
+    </Link>
   );
 };
 

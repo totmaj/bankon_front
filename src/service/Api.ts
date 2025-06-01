@@ -6,8 +6,12 @@ import axios, {
 import axiosRetry from "axios-retry";
 import ToastUtils from "../components/ui/Toast/toast";
 
+const apiurl = import.meta.env.VITE_API_URL;
+
+const baseURL = import.meta.env.VITE_BASE_URL;
+console.log(import.meta.env)
 const BackEndReq = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL,
+  baseURL: apiurl,
   timeout: 2500000, // Corrected the env variable name
   headers: {
     Accept: "application/json",
@@ -65,7 +69,7 @@ BackEndReq.interceptors.response.use(
           // Unauthorized, redirect to login or refresh token
           // console.error("Unauthorized! Redirecting to login.");
           // ToastUtils.error("Unauthorized! Redirecting to login.");
-          window.location.href = process.env.REACT_APP_BASENAME + "/login";
+          window.location.href = baseURL + "/login";
           break;
         case 403:
           // Unauthorized, redirect to login or refresh token

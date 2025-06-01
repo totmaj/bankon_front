@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
       <section className="size-full relative  flex flex-col items-center justify-center">
         <Shadow className="size-[80rem] opacity-60 mt-[20rem] z-0" />
 
-        <div className="absolute h-[40rem] top-0 w-full text-center flex flex-col items-center justify-center gap-[4rem]">
+        <div className="absolute h-[50rem] top-0 w-full text-center flex flex-col items-center justify-center gap-[4rem]">
           <div
             data-aos="zoom-in"
             className="text-[var(--secondary-color)] text-[2rem] md:text-[3rem] font-bold hero-title mt-0"

@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileImage from "../components/ui/ProfileImage";
+import ProfileImage from "../../components/ui/ProfileImage.js";
 
 const Profile :React.FC  = () => {
   return (

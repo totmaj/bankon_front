@@ -33,6 +33,7 @@ const Select: React.FC<param> = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  debugger
   return (
     <div
       className="relative w-full border border-[var(--gray-color)] mb-4 rounded-md"
@@ -72,13 +73,13 @@ const Select: React.FC<param> = ({
       </button>
 
       {isOpen && (
-        <ul className="absolute mt-1 w-full bg-[var(--dark-color)] rounded-md shadow-lg z-10 max-h-60 overflow-y-auto animate-fade-up animate-duration-200">
+        <ul className="absolute mt-1 w-full bg-red-200 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto animate-fade-up animate-duration-200">
           {options.map((option: any) => (
             <li
               key={option.value}
               className={`px-4 py-2 cursor-pointer text-white hover:bg-[var(--dark-gray-color)] transition-all duration-200 ${
                 value === option.value
-                  ? "bg-[var(--dark-gray-color)] font-medium"
+                  ? " font-medium"
                   : ""
               }`}
               onClick={() => handleSelect(option.value)}

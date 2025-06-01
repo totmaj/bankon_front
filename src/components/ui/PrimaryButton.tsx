@@ -2,23 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 interface param {
-    children?: any;
-    type?: string | undefined;
-    className?: string | undefined;
-    href?: string | undefined;
-    target?: string | undefined;
-    outlined?: boolean | undefined;
-    aos?:boolean
-
+  children?: any;
+  type?: string | undefined;
+  className?: string | undefined;
+  href?: string | undefined;
+  target?: string | undefined;
+  outlined?: boolean | undefined;
+  aos?: boolean;
+  onClick?: () => void;
 }
-const PrimaryButton : React.FC<param> = ({
+const PrimaryButton: React.FC<param> = ({
   children,
   className = "",
   href,
   target = "_self",
   outlined = false,
+  onClick,
 }) => {
-
   const baseClasses =
     "primary-button w-full mt-4 px-4 py-[0.5rem] rounded-md transition-all duration-300 font-semibold cursor-pointer flex justify-center items-center ";
 
@@ -37,7 +37,7 @@ const PrimaryButton : React.FC<param> = ({
   }
 
   return (
-    <button type="submit" className={commonClasses}>
+    <button type="button" onClick={onClick} className={commonClasses}>
       {children}
     </button>
   );
