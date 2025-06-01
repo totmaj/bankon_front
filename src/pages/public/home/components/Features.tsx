@@ -7,17 +7,15 @@ const Features: React.FC = () => {
   const features = sections.section3.features;
 
   return (
-      <div className="absolute top-[22rem] w-full flex flex-col items-center justify-center overflow-x-hidden">
-        <Shadow
-          className="size-[40rem] opacity-20 mb-[-25rem] z-0"
+    <div className=" w-full flex items-center justify-center overflow-hidden">
+      <div className="size-full relative h-[800px] md:h-[400px] flex flex-col items-center justify-center">
+         <Shadow
+          className="size-[60rem]  opacity-20 -top-[50px]  z-0"
           color="#fff"
-        />
-        <div className="gradient-border h-[2px] w-full z-50"></div>
+        /> 
+        <div className="gradient-border h-[2px] w-full absolute top-0 "></div>
 
-        <div className="w-full h-[30rem] relative">
-          <div className="features-content size-full !z-[0] absolute"></div>
-
-          <div className="z-50 relative flex justify-center mt-[8rem]">
+          <div className=" flex justify-center absolute flex-col md:flex-row">
             {features.map((feature, index) => (
               <FeatureItem
                 key={index}
@@ -27,9 +25,9 @@ const Features: React.FC = () => {
               />
             ))}
           </div>
-        </div>
+    
       </div>
-  
+  </div>
   );
 };
 

@@ -5,10 +5,11 @@ import Features2 from "./components/Features2";
 
 const Home: React.FC = () => {
   return (
-    <div className="relative size-full">
+    <div className="
+    flow-x-hidden flex flex-col items-center justify-center">
   
       <Hero />
-      <Features />
+       <Features />
       <Features2 /> 
     </div>  
   );

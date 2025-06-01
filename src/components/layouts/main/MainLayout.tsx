@@ -6,14 +6,18 @@ interface Param {
   children: any;
 }
 const MainLayout: React.FC<Param> = ({ children }) => {
-  return (
+  return (<>
     <div  className=" flex flex-col w-full  ">
        <Header /> 
       <div className="flex flex-row  ">
         <Sidebar />
-        <main  className=" main w-full ">{children}</main>
+        <main  className=" main w-full overflow-x-hidden">{children}</main>
       </div>
     </div>
+
+
+
+</>
   );
 };
 

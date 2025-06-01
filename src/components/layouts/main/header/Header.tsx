@@ -9,10 +9,10 @@ const Header: React.FC = () => {
   const { token } = useContext(AppContext);
 
   return (
-    <header className="bg-[var(--dark-color)] h-[4.5rem] flex justify-between items-center px-[2rem] border-b border-b-[var(--darkest-gray-color)]">
+    <header className="bg-[var(--dark-color)] h-[4.5rem] flex justify-between items-center px-4 border-b border-b-[var(--darkest-gray-color)]">
       <Logo />
 
-      {token ? (
+      {token ? (  
         <UserProfileButton />
       ) : (
         <div className="flex items-center gap-[2rem]">

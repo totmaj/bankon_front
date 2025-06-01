@@ -13,8 +13,8 @@ const FeatureItem: React.FC<param> = ({ title, description, index }) => {
     <div
       data-aos="fade-up"
       data-aos-duration={index === 0 ? "500" : index === 1 ? "800" : "500"}
-      className={`text-white px-[4rem] text-center p-4 w-1/3 flex flex-col justify-center items-center gap-[1rem] ${
-        index !== 2 ? "border-r border-r-[var(--dark-gray-color)]" : ""
+      className={`text-white px-[4rem] text-center p-4 w-full md:w-1/3 flex flex-col justify-center items-center gap-[1rem] ${
+        index !== 2 ? "md:border-0 md:border-r md:border-r-[var(--dark-gray-color)] border-b border-b-[var(--dark-gray-color)]" : ""
       }`}
     >
       <div>

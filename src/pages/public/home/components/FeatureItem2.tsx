@@ -9,13 +9,13 @@ interface param {
 const FeatureItem2 : React.FC<param>= ({ title, description, index }) => {
   return (
     <div
-      className={`text-white w-[70%] ${
-        index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+      className={`text-white   ${
+        index % 2 === 0 ? "md:flex-row flex-col" : "md:flex-row-reverse flex-col-reverse"
       } flex items-center justify-between`}
     >
       <div
-        className="max-w-[70%]"
-        data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+        className=""
+         data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
       >
         <p className="font-bold text-[2rem] mb-[2rem]">{title}</p>
         <p className="text-[1.25rem]">{description}</p>
@@ -23,7 +23,7 @@ const FeatureItem2 : React.FC<param>= ({ title, description, index }) => {
 
       <div
         className="opacity-90"
-        data-aos={index % 2 !== 0 ? "fade-right" : "fade-left"}
+         data-aos={index % 2 !== 0 ? "fade-right" : "fade-left"}
       >
         {index === 0 ? (
           <svg

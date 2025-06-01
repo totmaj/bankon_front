@@ -58,7 +58,7 @@ const sidebarItems = [
 
 const Sidebar:React.FC = () => {
   return (
-    <div className="w-[15rem]  bg-secondary-dark     border-r border-r-darkest-gray-color p-[1.5rem]  left-0 top-16 ">
+    <div className="w-[20rem] hidden md:block  bg-secondary-dark   main  border-r border-r-[var(--darkest-gray-color)] p-[1.5rem]  ">
       <nav>
         <ul className="flex flex-col gap-[1rem]">
           {sidebarItems.map((item, index) => (
