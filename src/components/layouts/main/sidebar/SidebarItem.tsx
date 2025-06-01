@@ -6,7 +6,12 @@ interface Props {
   icon?: React.ReactNode;
 }
 import React from "react";
-const SidebarItem :React.FC<Props> = ({ href, title, className = "", icon }) => {
+const SidebarItem: React.FC<Props> = ({
+  href,
+  title,
+  className = "",
+  icon,
+}) => {
   const location = useLocation();
 
   const isActive = location.pathname === href;
@@ -17,9 +22,13 @@ const SidebarItem :React.FC<Props> = ({ href, title, className = "", icon }) => 
         isActive ? "bg-[var(--dark-color)]" : ""
       }`}
     >
-      <Link to={href} className="w-full px-[1rem] py-[0.7rem]">
+      <a
+        href={href}
+        target={href ? "_blank" : ""}
+        className="w-full px-[1rem] py-[0.7rem]"
+      >
         {title}
-      </Link>
+      </a>
 
       {icon}
     </li>

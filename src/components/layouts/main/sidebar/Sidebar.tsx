@@ -3,7 +3,7 @@ import SidebarItem from "./SidebarItem";
 const sidebarItems = [
   {
     title: "Wallet",
-    href: "/wallet",
+    href: "",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ const sidebarItems = [
   },
   {
     title: "Monitoring",
-    href: "/monitoring",
+    href: "https://w.bankon.click/",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
