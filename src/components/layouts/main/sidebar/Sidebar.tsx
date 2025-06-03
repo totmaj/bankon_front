@@ -30,7 +30,7 @@ const sidebarItems = [
   },
   {
     title: "Monitoring",
-    href: "https://w.bankon.click/",
+    href: "/monitoring",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

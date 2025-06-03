@@ -6,17 +6,22 @@ import axios, {
 import axiosRetry from "axios-retry";
 import ToastUtils from "../components/ui/Toast/toast";
 
-const apiurl = import.meta.env.VITE_API_URL;
-
+const apiBaseUrl = import.meta.env.VITE_API_URL;
+const apiurl = import.meta.env.DEV 
+  ? '/api' // Use proxy in development
+  : apiBaseUrl; // Direct API calls in production
 const baseURL = import.meta.env.VITE_BASE_URL;
-console.log(import.meta.env)
+console.log(import.meta.env);
 const BackEndReq = axios.create({
   baseURL: apiurl,
   timeout: 2500000, // Corrected the env variable name
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json;charset=UTF-8",
+    "access-control-allow-credentials": true,
+    host: baseURL,
   },
+  withCredentials: true,
 });
 
 // Retry logic for transient errors
@@ -35,20 +40,14 @@ axiosRetry(BackEndReq, {
 // Request interceptor for adding authorization headers
 BackEndReq.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    const token = localStorage.getItem("token") || "null";
-    let lang = "fa";
-    if (localStorage.getItem("lang")) {
-      lang = JSON.parse(localStorage.getItem("lang") || "fa");
-    }
+    const token = localStorage.getItem("token") || null;
 
     if (token) {
       (
         config as InternalAxiosRequestConfig
       ).headers.Authorization = `Bearer ${token}`;
     }
-    if (lang) {
-      (config as InternalAxiosRequestConfig).headers.lang = lang;
-    }
+
     return config as InternalAxiosRequestConfig;
   },
   (error) => Promise.reject(error)
@@ -58,9 +57,9 @@ BackEndReq.interceptors.request.use(
 BackEndReq.interceptors.response.use(
   (response: AxiosResponse) => response,
   (error: any) => {
-    if (error?.response?.data?.result?.status?.message) {
+    if (error?.response?.data?.suggestion) {
       if (error.response.status !== 409)
-        ToastUtils.error(error?.response?.data?.result?.status?.message);
+        ToastUtils.error(error?.response?.data?.suggestion);
       return "";
     } else if (error.response) {
       // Handle HTTP errors

@@ -22,13 +22,9 @@ const SidebarItem: React.FC<Props> = ({
         isActive ? "bg-[var(--dark-color)]" : ""
       }`}
     >
-      <a
-        href={href}
-        target={href ? "_blank" : ""}
-        className="w-full px-[1rem] py-[0.7rem]"
-      >
+      <Link to={href} className="w-full px-[1rem] py-[0.7rem]">
         {title}
-      </a>
+      </Link>
 
       {icon}
     </li>

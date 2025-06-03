@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/public/Login";
+
 import MainLayout from "./components/layouts/main/MainLayout";
 import DashboardLayout from "./components/layouts/dashboard/DashboardLayout";
 import React, { useEffect, useMemo, useState } from "react";
@@ -8,9 +8,12 @@ import "aos/dist/aos.css";
 import "./styles/global.css";
 import { User } from "./models/User.js";
 import AppContext, { ContextType } from "./context/AppContext";
-import SignUp from "./pages/public/SignUp";
+import SignUp from "./pages/public/auth/SignUp";
 import Home from "./pages/public/home/Home";
 import UserRoutes from "./routes/UserRoutes";
+import Monitoring from "./pages/public/Monitoring";
+import Login from "./pages/public/auth/Login";
+import PublicRoutes from "./routes/PublicRoutes";
 const App: React.FC = () => {
   useEffect(() => {
     Aos.init({ duration: 500 });
@@ -75,17 +78,9 @@ const App: React.FC = () => {
             </DashboardLayout>
           }
         />
-        <Route
-          path="/*"
-          element={
-            <MainLayout>
-              <Home />
-            </MainLayout>
-          }
-        />
-        <Route path="/register" element={<SignUp />} />
-
-        <Route path="/login" element={<Login />} />
+ 
+        <Route path="/*" element={<PublicRoutes />} />
+        
       </Routes>
     </AppContext.Provider>
   );

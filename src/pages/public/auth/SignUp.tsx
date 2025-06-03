@@ -1,7 +1,6 @@
 import React from "react";
-import AuthPageContainer from "./auth/AuthPageContainer";
-import SignUpForm from "./auth/SignUpForm";
-import Header from "../../components/layouts/main/header/Header";
+import SignUpForm from "./components/SignUpForm";
+import Header from "../../../components/layouts/main/header/Header";
 
 const SignUp: React.FC = () => {
   return (
@@ -9,9 +8,9 @@ const SignUp: React.FC = () => {
       <Header />
       <div className="flex flex-row ">
         <main className=" main w-full  flex h-screen  pb-16">
-          <AuthPageContainer>
+          <div className="flex justify-center items-center w-screen ">
             <SignUpForm />
-          </AuthPageContainer>
+          </div>
         </main>
       </div>
     </div>

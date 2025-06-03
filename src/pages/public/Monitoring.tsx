@@ -1,6 +1,6 @@
 import React from "react";
 
-const Monitoring:React.FC = () => {
+const Monitoring: React.FC = () => {
   return <div></div>;
 };
 

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
-import Input from "../../../components/ui/Input";
-import Select from "../../../components/ui/Select";
-import PrimaryLink from "../../../components/ui/PrimaryLink";
-import PrimaryButton from "../../../components/ui/PrimaryButton";
-import { signup } from "../../../service/Requests";
+import Input from "../../../../components/ui/Input";
+import Select from "../../../../components/ui/Select";
+import PrimaryLink from "../../../../components/ui/PrimaryLink";
+import PrimaryButton from "../../../../components/ui/PrimaryButton";
+import { signup } from "../../../../service/Requests";
+import AppContext from "../../../../context/AppContext";
+import { useCookie } from "react-use";
+import { useNavigate } from "react-router-dom";
+import ToastUtils from "../../../../components/ui/Toast/toast";
 
 const clientTypeOptions = [
   { label: "Individual", value: "individual" },
@@ -21,16 +25,28 @@ const SignUpForm: React.FC = () => {
     referral_code: "",
   });
 
+  const [authToken, setAuthToken, removeAuthToken] = useCookie("authToken");
+  const [authUser, setAuthUser, removeAuthUser] = useCookie("authUser");
+  const navigate = useNavigate();
+
   const onSubmit = () => {
+    setAuthToken("token");
     signup(form)
       .then((res) => {
-        console.log(res);
-        debugger;
+        if (res.accessToken) {
+          let token = res.accessToken;
+          setAuthToken(token);
+          setAuthUser(res.user);
+          navigate("/user/dashboard");
+        }
       })
-      .catch(() => {});
+      .catch((res) => {
+        debugger;
+        ToastUtils.error(res.suggestion);
+      });
   };
   return (
-    <div className="login-form w-[35rem] mx-auto p-6 md:px-10 md:py-12 mt-32  md:bg-[var(--secondary-dark-color)] rounded-3xl">
+    <div className="w-[35rem] mx-auto p-6 md:px-10 md:py-12 mt-32  md:bg-[var(--secondary-dark-color)] rounded-3xl">
       <div className="flex flex-col gap-[0.5rem] mb-[3rem]">
         <h2 className="text-xl font-semibold text-center text-white">
           {"Sign Up"}
@@ -83,7 +99,7 @@ const SignUpForm: React.FC = () => {
           setForm({ ...form, confirmPassword: e.target.value });
         }}
       />
-
+     
       <Select
         options={clientTypeOptions}
         value={form.client_type}
@@ -102,10 +118,6 @@ const SignUpForm: React.FC = () => {
           setForm({ ...form, referral_code: e.target.value });
         }}
       />
-
-      {/* {error && (
-        <p className="text-red-500 text-sm text-center mt-4">{error}</p>
-      )} */}
 
       <PrimaryButton onClick={onSubmit} type="submit">
         {"Sign Up"}
