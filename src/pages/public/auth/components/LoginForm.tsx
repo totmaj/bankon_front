@@ -23,7 +23,7 @@ const LoginForm = () => {
           localStorage.setItem("token", token);
           setToken(token);
           setUser(res.user);
-          navigate("/user/dashboard");
+          navigate("/user/monitoring");
         }
       })
       .catch(() => {});

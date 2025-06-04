@@ -37,7 +37,7 @@ const SignUpForm: React.FC = () => {
           localStorage.setItem("token", token);
           setToken(token);
           setUser(res.user);
-          navigate("/user/dashboard");
+          navigate("/user/monitoring");
         }
       })
       .catch((res) => {});
