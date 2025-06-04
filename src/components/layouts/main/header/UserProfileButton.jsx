@@ -17,6 +17,7 @@ const UserProfileButton = () => {
   };
 
   const options = [
+    { value: "monitoring", label: "Monitoring", href: "/user/monitoring" },
     { value: "profile", label: "Profile", href: "/user/profile" },
     { value: "logout", label: "Log Out", onClick: handleLogout },
   ];

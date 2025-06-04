@@ -3,11 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useEffect, useRef } from "react";
 import AppContext from "../../../../context/AppContext";
 import ProfileImage from "../../../ui/ProfileImage";
+import { useNavigate } from "react-router-dom";
 
 const UserMenu = () => {
   const [userToggle, setUserTogged] = React.useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const { user } = useContext(AppContext);
+
+  const { setToken, setUser, user } = useContext(AppContext);
+  const navigate = useNavigate();
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -26,13 +29,22 @@ const UserMenu = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    setToken("");
+    setUser(null);
+
+    navigate("/");
+  };
   return (
     <>
       <div
         onClick={() => setUserTogged(!userToggle)}
         className="flex items-center  space-x-4 md:w-48 xs:w-24 relative"
       >
-        <ProfileImage  size="2.5rem" />
+        <ProfileImage size="2.5rem" />
         <div className="text-light space-x-2 hover:text-primary flex flex-row  items-center">
           <span className="hidden md:block">{user?.username}</span>
           {userToggle === true ? (
@@ -51,7 +63,9 @@ const UserMenu = () => {
           >
             <button className="hover:bg-dark p-1">My Profile</button>
             <button className="hover:bg-dark p-1">Settings</button>
-            <button className="hover:bg-dark p-1">Log Out</button>
+            <button className="hover:bg-dark p-1" onClick={handleLogout}>
+              Log Out
+            </button>
           </div>
         </>
       )}
