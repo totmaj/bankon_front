@@ -7,21 +7,19 @@ import axiosRetry from "axios-retry";
 import ToastUtils from "../components/ui/Toast/toast";
 
 const apiBaseUrl = import.meta.env.VITE_API_URL;
-const apiurl = import.meta.env.DEV 
-  ? '/api' // Use proxy in development
-  : apiBaseUrl; // Direct API calls in production
+// const apiurl = import.meta.env.DEV
+//   ? "/api" // Use proxy in development
+//   : apiBaseUrl; // Direct API calls in production
 const baseURL = import.meta.env.VITE_BASE_URL;
-console.log(import.meta.env);
+
 const BackEndReq = axios.create({
-  baseURL: apiurl,
+  baseURL: apiBaseUrl,
   timeout: 2500000, // Corrected the env variable name
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json;charset=UTF-8",
-    "access-control-allow-credentials": true,
     host: baseURL,
   },
-  withCredentials: true,
 });
 
 // Retry logic for transient errors
@@ -57,10 +55,9 @@ BackEndReq.interceptors.request.use(
 BackEndReq.interceptors.response.use(
   (response: AxiosResponse) => response,
   (error: any) => {
+    debugger;
     if (error?.response?.data?.suggestion) {
-      if (error.response.status !== 409)
-        ToastUtils.error(error?.response?.data?.suggestion);
-      return "";
+      ToastUtils.error(error?.response?.data?.suggestion);
     } else if (error.response) {
       // Handle HTTP errors
       switch (error.response.status) {

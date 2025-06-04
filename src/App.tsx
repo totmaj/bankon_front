@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
 import MainLayout from "./components/layouts/main/MainLayout";
 import DashboardLayout from "./components/layouts/dashboard/DashboardLayout";
@@ -20,8 +25,10 @@ const App: React.FC = () => {
   }, []);
 
   const [user, setUser] = useState<User | null>(null);
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [token, setToken] = useState<string>("");
+  const user_storage = JSON.parse(localStorage.getItem("user") || "null");
+  const token_storage = localStorage.getItem("token") || "null";
+  const navigate = useNavigate();
   const contextValue = useMemo<ContextType>(
     () => ({
       user,
@@ -31,45 +38,19 @@ const App: React.FC = () => {
     }),
     [user, token, setUser, setToken]
   );
+
+  useEffect(() => {
+    if (!user_storage && !token) {
+      if (window?.location.href?.includes("user/")) navigate("/login");
+    } else {
+      setToken(token_storage);
+      setUser(user_storage);
+    }
+  }, []);
+
   return (
     <AppContext.Provider value={contextValue}>
       <Routes>
-        {/* admin Routes */}
-
-        {/* <Route
-            path="/admin/*"
-            element={
-              <Layout language={language}>
-                <AdminRoutes />
-                <ToastContainer
-                  hideProgressBar={true}
-                  icon={false}
-                  closeButton={true}
-                />
-              </Layout>
-            }
-          />
-
-       
-
-          <Route
-            path="/superadmin/*"
-            element={
-              <SuperAdminLayout language={language}>
-                <SuperAdminRoutes />
-                <ToastContainer />
-              </SuperAdminLayout>
-            }
-          /> */}
-        {/* <Route
-          path="/*"
-          element={
-            <MainLayout>
-              <Route path="/*" element={<Home />} />
-            </MainLayout>
-          }
-        /> */}
-
         <Route
           path="/user/*"
           element={
@@ -78,9 +59,8 @@ const App: React.FC = () => {
             </DashboardLayout>
           }
         />
- 
+
         <Route path="/*" element={<PublicRoutes />} />
-        
       </Routes>
     </AppContext.Provider>
   );

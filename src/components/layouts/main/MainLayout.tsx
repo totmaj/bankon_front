@@ -13,7 +13,7 @@ const MainLayout: React.FC<Param> = ({ children }) => {
         <Header />
         <div className="flex flex-row  ">
           <Sidebar />
-          <main className=" main w-full overflow-x-hidden md:pb-0 pb-16">
+          <main className=" main w-full overflow-x-hidden md:pb-0 pb-16 mt-16 min-h-screen">
             {children}
           </main>
         </div>

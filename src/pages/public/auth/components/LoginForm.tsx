@@ -1,26 +1,28 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../../../components/ui/Input.js";
 import PrimaryLink from "../../../../components/ui/PrimaryLink.js";
 import PrimaryButton from "../../../../components/ui/PrimaryButton.js";
 import { login } from "../../../../service/Requests.js";
-import { useCookie } from "react-use";
+import AppContext from "../../../../context/AppContext.js";
+
 
 const LoginForm = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
-
+  const { setToken, setUser } = useContext(AppContext);
   const navigate = useNavigate();
 
-  const [authToken, setAuthToken, removeAuthToken] = useCookie("authToken");
-  const [authUser, setAuthUser, removeAuthUser] = useCookie("authUser");
   const onSubmit = () => {
     login(form)
       .then((res) => {
-        if (res.accessToken) {
+        
+        if (res?.accessToken) {
           let token = res.accessToken;
-          setAuthToken(token);
-          setAuthUser(res.user);
+          localStorage.setItem("user", JSON.stringify(res?.user));
+          localStorage.setItem("token", token);
+          setToken(token);
+          setUser(res.user);
           navigate("/user/dashboard");
         }
       })

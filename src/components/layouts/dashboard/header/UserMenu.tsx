@@ -1,11 +1,13 @@
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import AppContext from "../../../../context/AppContext";
+import ProfileImage from "../../../ui/ProfileImage";
 
 const UserMenu = () => {
   const [userToggle, setUserTogged] = React.useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-
+  const { user } = useContext(AppContext);
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -30,13 +32,9 @@ const UserMenu = () => {
         onClick={() => setUserTogged(!userToggle)}
         className="flex items-center  space-x-4 md:w-48 xs:w-24 relative"
       >
-        <img
-          src="http://banks.trade/monitoring/img/rose.jpg"
-          alt="User Avatar"
-          className="w-10 h-10 rounded-full"
-        />
+        <ProfileImage  size="2.5rem" />
         <div className="text-light space-x-2 hover:text-primary flex flex-row  items-center">
-          <span className="hidden md:block">Rose Admin</span>
+          <span className="hidden md:block">{user?.username}</span>
           {userToggle === true ? (
             <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon>
           ) : (

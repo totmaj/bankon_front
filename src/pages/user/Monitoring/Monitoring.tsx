@@ -1,22 +1,22 @@
 import {
   faChartArea,
+  faChartBar,
   faChartColumn,
+  faChartDiagram,
   faChartLine,
   faChartPie,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import CsvTable from "./CsvTable";
+import ReportInfo from "./components/ReportInfo";
 
-interface Param {}
-
-const BaseValues: React.FC = () => {
+const Monitoring: React.FC = () => {
   return (
     <>
-      <CsvTable />
-      
+      <ReportInfo />
+    
     </>
   );
 };
 
-export default BaseValues;
+export default Monitoring;

@@ -4,13 +4,30 @@ import Home from "../pages/public/home/Home";
 import Monitoring from "../pages/public/Monitoring";
 import Login from "../pages/public/auth/Login";
 import MainLayout from "../components/layouts/main/MainLayout";
+import { ToastContainer } from "react-toastify";
 
 export default function PublicRoutes() {
   return (
     <Routes>
-      <Route path="/register" element={<Signup />} />
+      <Route
+        path="/register"
+        element={
+          <>
+            <ToastContainer />
+            <Signup />
+          </>
+        }
+      />
 
-      <Route path="/login" element={<Login />} />
+      <Route
+        path="/login"
+        element={
+          <>
+            <ToastContainer />
+            <Login />
+          </>
+        }
+      />
       <Route
         path="/*"
         element={

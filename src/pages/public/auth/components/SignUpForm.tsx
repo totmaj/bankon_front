@@ -25,25 +25,22 @@ const SignUpForm: React.FC = () => {
     referral_code: "",
   });
 
-  const [authToken, setAuthToken, removeAuthToken] = useCookie("authToken");
-  const [authUser, setAuthUser, removeAuthUser] = useCookie("authUser");
+  const { setToken, setUser } = useContext(AppContext);
   const navigate = useNavigate();
 
   const onSubmit = () => {
-    setAuthToken("token");
     signup(form)
       .then((res) => {
-        if (res.accessToken) {
+        if (res?.accessToken) {
           let token = res.accessToken;
-          setAuthToken(token);
-          setAuthUser(res.user);
+          localStorage.setItem("user", JSON.stringify(res?.user));
+          localStorage.setItem("token", token);
+          setToken(token);
+          setUser(res.user);
           navigate("/user/dashboard");
         }
       })
-      .catch((res) => {
-        debugger;
-        ToastUtils.error(res.suggestion);
-      });
+      .catch((res) => {});
   };
   return (
     <div className="w-[35rem] mx-auto p-6 md:px-10 md:py-12 mt-32  md:bg-[var(--secondary-dark-color)] rounded-3xl">
@@ -99,7 +96,7 @@ const SignUpForm: React.FC = () => {
           setForm({ ...form, confirmPassword: e.target.value });
         }}
       />
-     
+
       <Select
         options={clientTypeOptions}
         value={form.client_type}

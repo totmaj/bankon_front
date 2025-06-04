@@ -1,16 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/public/home/Home";
 import React from "react";
-import Dashboard from "../pages/user/Dashboard";
+import Monitoring from "../pages/user/Monitoring/Monitoring";
 
 const UserRoutes: React.FC = () => {
-  debugger
+  debugger;
   return (
     <Routes>
       {/* Public Routes */}
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/monitoring" element={<Monitoring />} />
       {/* Default Redirect */}
     </Routes>
   );
 };
-export default UserRoutes
+export default UserRoutes;

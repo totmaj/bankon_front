@@ -1,13 +1,14 @@
+import { useContext } from "react";
+import ProfileImage from "../../../ui/ProfileImage";
+import AppContext from "../../../../context/AppContext";
+
 const UserProfile: React.FC = () => {
+  const { user } = useContext(AppContext);
   return (
     <div className="flex items-center pl-6 pt-6 space-x-4">
-      <img
-        src="http://banks.trade/monitoring/img/rose.jpg"
-        alt="User Avatar"
-        className="w-10 h-10 rounded-full"
-      />
+      <ProfileImage size="2.5rem" />
       <div>
-        <h2 className="text-white font-bold">Rose</h2>
+        <h2 className="text-white font-bold">{user?.username}</h2>
         <p className="text-light">Admin</p>
       </div>
     </div>
