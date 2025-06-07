@@ -33,18 +33,20 @@ const Sidebar: React.FC<Param> = ({
       >
         <div className="flex items-center justify-between h-16 px-4">
           {sidebarOpen === true ? (
-            <Link to="/" className="text-primary flex flex-row gap-2 text-3xl items-center">
+            <Link
+              to="/"
+              className="text-primary flex flex-row gap-2 text-3xl items-center"
+            >
               <FontAwesomeIcon icon={faUserPen} />
               <span className="text-primary font-bold">Trox</span>
             </Link>
           ) : (
             <></>
-      
           )}
         </div>
         {/* Add your sidebar navigation items here */}
         <UserProfile />
-        <Menu/>
+        <Menu />
       </div>
       {/* Mobile sidebar backdrop */}
       {mobileSidebarOpen && (
@@ -60,10 +62,14 @@ const Sidebar: React.FC<Param> = ({
         } md:hidden transition-transform duration-500 ease-in-out`}
       >
         <div className="flex items-center justify-between h-16 px-4">
-          <div className="text-primary flex flex-row gap-2 text-3xl items-center">
+          <Link
+            to="/"
+            className="text-primary flex flex-row gap-2 text-3xl items-center"
+          >
             <FontAwesomeIcon icon={faUserPen} />
             <span className="text-primary font-bold">Trox</span>
-          </div>
+          </Link>
+
           <button onClick={toggleMobileSidebar}>
             <FontAwesomeIcon
               icon={faClose}
@@ -72,7 +78,7 @@ const Sidebar: React.FC<Param> = ({
           </button>
         </div>
         <UserProfile />
-        <Menu/>
+        <Menu />
       </div>
     </>
   );
