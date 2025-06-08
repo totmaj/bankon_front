@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "../pages/public/home/Home";
 import React from "react";
-import Monitoring from "../pages/user/Monitoring/Monitoring";
+import Monitoring from "../pages/user/monitoring/Monitoring";
 
 const UserRoutes: React.FC = () => {
   debugger;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
-import { csvUrls } from "../../../constants/constansValues";
+import { csvTopRatesUrls } from "../../../constants/constansValues";
 import ProfileImage from "../../ui/ProfileImage";
 
 const TopRates: React.FC = () => {
@@ -30,7 +30,7 @@ const TopRates: React.FC = () => {
   const fetchAllCsvs = async () => {
     try {
       const entries = await Promise.all(
-        Object.entries(csvUrls).map(async ([name, url]) => {
+        Object.entries(csvTopRatesUrls).map(async ([name, url]) => {
           const values = await fetchCsv(url);
           return { name, values };
         })

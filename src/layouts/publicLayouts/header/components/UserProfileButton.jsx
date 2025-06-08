@@ -1,8 +1,9 @@
-import Dropdown from "../../../ui/Dropdown";
+
 import { useNavigate } from "react-router-dom";
-import ProfileImage from "../../../ui/ProfileImage";
 import { useContext } from "react";
 import AppContext from "../../../../context/AppContext";
+import Dropdown from "../../../../components/ui/Dropdown";
+import ProfileImage from "../../../../components/ui/ProfileImage";
 
 const UserProfileButton = () => {
   const navigate = useNavigate();

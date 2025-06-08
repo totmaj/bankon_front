@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import Signup from "../pages/public/auth/SignUp";
 import Home from "../pages/public/home/Home";
-import Monitoring from "../pages/public/Monitoring";
-import Login from "../pages/public/auth/Login";
-import MainLayout from "../components/layouts/main/MainLayout";
 import { ToastContainer } from "react-toastify";
+import SignUp from "../pages/public/signup/SignUp";
+import Login from "../pages/public/login/Login";
+import PublicLayout from "../layouts/publicLayouts/PublicLayout";
+import Monitoring from "../pages/public/monitoring/Monitoring";
+import UserLayout from "../layouts/userLayouts/UserLayout";
 
 export default function PublicRoutes() {
   return (
@@ -14,7 +15,7 @@ export default function PublicRoutes() {
         element={
           <>
             <ToastContainer />
-            <Signup />
+            <SignUp />
           </>
         }
       />
@@ -31,17 +32,17 @@ export default function PublicRoutes() {
       <Route
         path="/*"
         element={
-          <MainLayout>
+          <PublicLayout>
             <Home />
-          </MainLayout>
+          </PublicLayout>
         }
       />
       <Route
         path="/monitoring"
         element={
-          <MainLayout>
+          <PublicLayout>
             <Monitoring />
-          </MainLayout>
+          </PublicLayout>
         }
       />
     </Routes>

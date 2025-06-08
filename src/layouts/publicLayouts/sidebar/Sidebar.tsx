@@ -1,4 +1,4 @@
-import SidebarItem from "./SidebarItem";
+import SidebarItem from "./components/SidebarItem";
 
 const sidebarItems = [
   {

@@ -11,6 +11,7 @@ import {
   Legend,
   Tooltip,
 } from "chart.js";
+import { realTimeChartCsv } from "../../../constants/constansValues";
 
 Chart.register(
   LineElement,
@@ -28,9 +29,7 @@ const RealtimeChart: React.FC = () => {
   const chartInstance = useRef<Chart | null>(null);
 
   const fetchData = async () => {
-    const response = await fetch(
-      "https://w.bankon.click/asset/data/report/data_info.csv"
-    );
+    const response = await fetch(realTimeChartCsv);
     const text = await response.text();
     return text.split("\n").map((line) => line.split(","));
   };

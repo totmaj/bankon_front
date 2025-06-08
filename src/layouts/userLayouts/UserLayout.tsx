@@ -1,6 +1,4 @@
 import React, { ReactNode, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "./sidebar/Sidebar";
 import Header from "./header/Header";
 
@@ -8,7 +6,7 @@ interface Param {
   children: ReactNode;
 }
 
-const DashboardLayout: React.FC<Param> = ({ children }) => {
+const UserLayout: React.FC<Param> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
@@ -43,4 +41,4 @@ const DashboardLayout: React.FC<Param> = ({ children }) => {
   );
 };
 
-export default DashboardLayout;
+export default UserLayout;

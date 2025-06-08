@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
+import { realTimeScriptCsv } from "../../../constants/constansValues";
 
 const RealTimeScript: React.FC = () => {
   const [lines, setLines] = useState<string[]>([]);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const fileUrl = "https://w.bankon.click/asset/data/report/report_realtime_status.csv";
 
   const fetchData = async () => {
     try {
-      const response = await fetch(fileUrl);
+      const response = await fetch(realTimeScriptCsv);
       const text = await response.text();
       const rows = text.trim().split("\n").slice(-11); // Last 11 rows
       setLines(rows);

@@ -1,13 +1,7 @@
-import {
-  faAngleDown,
-  faAngleUp,
-  faArrowDown,
-  faArrowUp,
-  faBars,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useRef } from "react";
-import UserMenu from "./UserMenu";
+import React from "react";
+import UserMenu from "./components/UserMenu";
 interface Param {
   toggleMobileSidebar: () => void;
   toggleSidebar: () => void;

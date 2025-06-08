@@ -1,9 +1,10 @@
-import PrimaryButton from "../../../ui/PrimaryButton";
-import PrimaryLink from "../../../ui/PrimaryLink";
-import Logo from "../Logo";
-import UserProfileButton from "./UserProfileButton";
+
+import PrimaryButton from "../../../components/ui/PrimaryButton";
+import PrimaryLink from "../../../components/ui/PrimaryLink";
+import AppContext from "../../../context/AppContext";
+import Logo from "./components/Logo";
+import UserProfileButton from "./components/UserProfileButton";
 import React, { useContext } from "react";
-import AppContext from "../../../../context/AppContext";
 
 const Header: React.FC = () => {
   const { token } = useContext(AppContext);

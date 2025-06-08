@@ -5,20 +5,15 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import MainLayout from "./components/layouts/main/MainLayout";
-import DashboardLayout from "./components/layouts/dashboard/DashboardLayout";
 import React, { useEffect, useMemo, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "./styles/global.css";
 import { User } from "./models/User.js";
 import AppContext, { ContextType } from "./context/AppContext";
-import SignUp from "./pages/public/auth/SignUp";
-import Home from "./pages/public/home/Home";
 import UserRoutes from "./routes/UserRoutes";
-import Monitoring from "./pages/public/Monitoring";
-import Login from "./pages/public/auth/Login";
 import PublicRoutes from "./routes/PublicRoutes";
+import UserLayout from "./layouts/userLayouts/UserLayout";
 const App: React.FC = () => {
   useEffect(() => {
     Aos.init({ duration: 500 });
@@ -54,12 +49,11 @@ const App: React.FC = () => {
         <Route
           path="/user/*"
           element={
-            <DashboardLayout>
+            <UserLayout>
               <UserRoutes />
-            </DashboardLayout>
+            </UserLayout>
           }
         />
-
         <Route path="/*" element={<PublicRoutes />} />
       </Routes>
     </AppContext.Provider>

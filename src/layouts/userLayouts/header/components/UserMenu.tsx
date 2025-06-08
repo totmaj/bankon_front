@@ -2,8 +2,8 @@ import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useEffect, useRef } from "react";
 import AppContext from "../../../../context/AppContext";
-import ProfileImage from "../../../ui/ProfileImage";
 import { useNavigate } from "react-router-dom";
+import ProfileImage from "../../../../components/ui/ProfileImage";
 
 const UserMenu = () => {
   const [userToggle, setUserTogged] = React.useState(false);

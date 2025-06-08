@@ -1,15 +1,15 @@
 import React from "react";
-import Header from "../../../components/layouts/main/header/Header";
-import LoginForm from "./components/LoginForm";
+import SignUpForm from "./components/SignUpForm";
+import Header from "../../../layouts/publicLayouts/header/Header";
 
-const Login: React.FC = () => {
+const SignUp: React.FC = () => {
   return (
     <div className=" flex flex-col w-full">
       <Header />
       <div className="flex flex-row ">
         <main className=" main w-full  flex h-screen  pb-16">
           <div className="flex justify-center items-center w-screen ">
-            <LoginForm />
+            <SignUpForm />
           </div>
         </main>
       </div>
@@ -17,4 +17,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default SignUp;

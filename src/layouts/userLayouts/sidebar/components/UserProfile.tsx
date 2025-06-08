@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import ProfileImage from "../../../ui/ProfileImage";
 import AppContext from "../../../../context/AppContext";
+import ProfileImage from "../../../../components/ui/ProfileImage";
 
 const UserProfile: React.FC = () => {
   const { user } = useContext(AppContext);

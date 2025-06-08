@@ -6,7 +6,7 @@ import Footer from "./footer/Footer";
 interface Param {
   children: any;
 }
-const MainLayout: React.FC<Param> = ({ children }) => {
+const PublicLayout: React.FC<Param> = ({ children }) => {
   return (
     <>
       <div className=" flex flex-col w-full relative  ">
@@ -23,4 +23,4 @@ const MainLayout: React.FC<Param> = ({ children }) => {
   );
 };
 
-export default MainLayout;
+export default PublicLayout;

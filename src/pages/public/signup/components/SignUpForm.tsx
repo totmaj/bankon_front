@@ -1,14 +1,11 @@
 import React, { useContext, useState } from "react";
-
 import Input from "../../../../components/ui/Input";
 import Select from "../../../../components/ui/Select";
 import PrimaryLink from "../../../../components/ui/PrimaryLink";
 import PrimaryButton from "../../../../components/ui/PrimaryButton";
 import { signup } from "../../../../service/Requests";
 import AppContext from "../../../../context/AppContext";
-import { useCookie } from "react-use";
 import { useNavigate } from "react-router-dom";
-import ToastUtils from "../../../../components/ui/Toast/toast";
 
 const clientTypeOptions = [
   { label: "Individual", value: "individual" },

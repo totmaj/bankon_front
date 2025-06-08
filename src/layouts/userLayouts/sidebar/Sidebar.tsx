@@ -1,8 +1,8 @@
-import { faBars, faClose, faUserPen } from "@fortawesome/free-solid-svg-icons";
+import { faClose, faUserPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import UserProfile from "./UserProfile";
-import Menu from "./Menu";
+import React from "react";
+import UserProfile from "./components/UserProfile";
+import Menu from "./components/Menu";
 import { Link } from "react-router-dom";
 interface Param {
   sidebarOpen: boolean;
