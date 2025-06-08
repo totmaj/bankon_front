@@ -97,7 +97,7 @@ const SignUpForm: React.FC = () => {
       <Select
         options={clientTypeOptions}
         value={form.client_type}
-        onChange={(e) => {
+        onChange={(e:any) => {
           setForm({ ...form, client_type: e });
         }}
         placeholder="Client Type"
