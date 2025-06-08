@@ -4,7 +4,7 @@ import axios, {
   AxiosResponse,
 } from "axios";
 import axiosRetry from "axios-retry";
-import ToastUtils from "../components/ui/Toast/toast";
+import ToastUtils from "../utils/toast";
 
 const apiBaseUrl = import.meta.env.VITE_API_URL;
 // const apiurl = import.meta.env.DEV
