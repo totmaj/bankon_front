@@ -1,9 +1,9 @@
 import React from "react";
-import TopRates from "../../../components/monitoring/topRates/TopRates";
-import RealtimeChart from "../../../components/monitoring/realTime/RealtimeChart";
-import StrategyChart from "../../../components/monitoring/strategy/StrategyChart";
-import RealTimeScript from "../../../components/monitoring/realTime/RealTimeScript";
-import StrategyScript from "../../../components/monitoring/strategy/StrategyScript";
+import TopRates from "./components/topRates/TopRates";
+import RealtimeChart from "./components/realTime/RealtimeChart";
+import StrategyChart from "./components/strategy/StrategyChart";
+import RealTimeScript from "./components/realTime/RealTimeScript";
+import StrategyScript from "./components/strategy/StrategyScript";
 
 const Monitoring: React.FC = () => {
   return (

@@ -49,9 +49,12 @@
 
 @theme {
   --color-primary: #eb1616;
-  --color-secondary: #191c24;
+  --color-secondary: #171b24;
   --color-light: #6c7293;
   --color-dark: #000000;
+
+  --color-secondary-dark-color: #11141b;
+  --color-gold-color: #f5c59f;
 }
 * {
   font-family: "Quicksand", sans-serif;

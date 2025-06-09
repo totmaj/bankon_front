@@ -1,13 +1,22 @@
-import { Route, Routes } from "react-router-dom";
-import React from "react";
-import Monitoring from "../pages/user/monitoring/Monitoring";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import Account from "../pages/user/account/Account";
+import Profile from "../pages/user/profile/Profile";
+import AppContext from "../context/AppContext";
 
 const UserRoutes: React.FC = () => {
-  debugger;
+  const { user } = useContext(AppContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      navigate("/home");
+    }
+  }, [user]);
   return (
     <Routes>
       {/* Public Routes */}
-      <Route path="/monitoring" element={<Monitoring />} />
+      <Route path="/account" element={<Account />} />
+      <Route path="/profile" element={<Profile />} />
       {/* Default Redirect */}
     </Routes>
   );

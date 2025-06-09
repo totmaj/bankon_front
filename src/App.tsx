@@ -13,7 +13,7 @@ import { User } from "./models/User.js";
 import AppContext, { ContextType } from "./context/AppContext";
 import UserRoutes from "./routes/UserRoutes";
 import PublicRoutes from "./routes/PublicRoutes";
-import UserLayout from "./layouts/userLayouts/UserLayout";
+import Layout from "./layouts/Layout";
 const App: React.FC = () => {
   useEffect(() => {
     Aos.init({ duration: 500 });
@@ -49,9 +49,9 @@ const App: React.FC = () => {
         <Route
           path="/user/*"
           element={
-            <UserLayout>
+            <Layout>
               <UserRoutes />
-            </UserLayout>
+            </Layout>
           }
         />
         <Route path="/*" element={<PublicRoutes />} />

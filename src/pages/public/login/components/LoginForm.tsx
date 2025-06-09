@@ -24,14 +24,14 @@ const LoginForm = () => {
           localStorage.setItem("token", token);
           setToken(token);
           setUser(res.user);
-          navigate("/user/monitoring");
+          navigate("/user/account");
         }
       })
       .catch(() => {});
   };
   return (
     <>
-      <div className=" w-[35rem] mx-auto p-6 md:px-10 md:py-12 mt-32  md:bg-[var(--secondary-dark-color)] rounded-3xl">
+      <div className=" w-[35rem] mx-auto p-6 md:px-10 md:py-12   md:bg-[var(--secondary-dark-color)] rounded-3xl">
         <div className="flex flex-col gap-[0.5rem] mb-[3rem]">
           <h2 className="text-xl font-semibold text-center text-white">
             {"Welcome Back"}

@@ -34,13 +34,13 @@ const SignUpForm: React.FC = () => {
           localStorage.setItem("token", token);
           setToken(token);
           setUser(res.user);
-          navigate("/user/monitoring");
+          navigate("/user/account");
         }
       })
       .catch((res) => {});
   };
   return (
-    <div className="w-[35rem] mx-auto p-6 md:px-10 md:py-12 mt-32  md:bg-[var(--secondary-dark-color)] rounded-3xl">
+    <div className="w-[35rem] mx-auto p-6 md:px-10 md:py-12   md:bg-[var(--secondary-dark-color)] rounded-3xl">
       <div className="flex flex-col gap-[0.5rem] mb-[3rem]">
         <h2 className="text-xl font-semibold text-center text-white">
           {"Sign Up"}
@@ -97,7 +97,7 @@ const SignUpForm: React.FC = () => {
       <Select
         options={clientTypeOptions}
         value={form.client_type}
-        onChange={(e:any) => {
+        onChange={(e: any) => {
           setForm({ ...form, client_type: e });
         }}
         placeholder="Client Type"

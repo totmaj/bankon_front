@@ -3,9 +3,8 @@ import Home from "../pages/public/home/Home";
 import { ToastContainer } from "react-toastify";
 import SignUp from "../pages/public/signup/SignUp";
 import Login from "../pages/public/login/Login";
-import PublicLayout from "../layouts/publicLayouts/PublicLayout";
+import Layout from "../layouts/Layout";
 import Monitoring from "../pages/public/monitoring/Monitoring";
-import UserLayout from "../layouts/userLayouts/UserLayout";
 
 export default function PublicRoutes() {
   return (
@@ -32,17 +31,17 @@ export default function PublicRoutes() {
       <Route
         path="/*"
         element={
-          <PublicLayout>
+          <Layout>
             <Home />
-          </PublicLayout>
+          </Layout>
         }
       />
       <Route
         path="/monitoring"
         element={
-          <PublicLayout>
+          <Layout>
             <Monitoring />
-          </PublicLayout>
+          </Layout>
         }
       />
     </Routes>

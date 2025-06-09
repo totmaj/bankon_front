@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
         <div className="absolute h-[50rem] top-0 w-full text-center flex flex-col items-center justify-center gap-[4rem]">
           <div
             data-aos="zoom-in"
-            className="text-[var(--secondary-color)] text-[2rem] md:text-[3rem] font-bold hero-title mt-0"
+            className="text-gold-color text-[2rem] md:text-[3rem] font-bold hero-title mt-0"
           >
             <h1>{title}</h1>
             <h2>{subtitle}</h2>
