@@ -9,7 +9,7 @@ const UserRoutes: React.FC = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (!user) {
-      navigate("/home");
+      //navigate("/home");
     }
   }, [user]);
   return (

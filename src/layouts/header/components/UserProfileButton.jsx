@@ -1,10 +1,8 @@
-
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import Dropdown from "../../../components/ui/Dropdown";
 import ProfileImage from "../../../components/ui/ProfileImage";
 import AppContext from "../../../context/AppContext";
-
 
 const UserProfileButton = () => {
   const navigate = useNavigate();
@@ -15,7 +13,7 @@ const UserProfileButton = () => {
     setToken("");
     setUser("");
 
-    navigate("/");
+    window.location.reload();
   };
 
   const options = [
