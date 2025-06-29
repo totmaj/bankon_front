@@ -9,7 +9,7 @@ interface param {
 const FeatureItem2 : React.FC<param>= ({ title, description, index }) => {
   return (
     <div
-      className={`text-white   ${
+      className={`text-white  gap-8 ${
         index % 2 === 0 ? "md:flex-row flex-col" : "md:flex-row-reverse flex-col-reverse"
       } flex items-center justify-between`}
     >
@@ -28,8 +28,8 @@ const FeatureItem2 : React.FC<param>= ({ title, description, index }) => {
         {index === 0 ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="220"
-            height="220"
+            width="110"
+            height="110"
             fill="none"
             viewBox="0 0 24 24"
           >
@@ -69,8 +69,8 @@ const FeatureItem2 : React.FC<param>= ({ title, description, index }) => {
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="210"
-            height="210"
+            width="110"
+            height="110"
             fill="none"
             viewBox="0 0 24 24"
           >

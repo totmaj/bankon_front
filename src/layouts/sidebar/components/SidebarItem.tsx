@@ -19,7 +19,7 @@ const SidebarItem: React.FC<Props> = ({
   return (
     <button
       className={`${className}  text-[1.15rem] font-[500] text-light hover:text-white hover:opacity-100 pr-[1rem] rounded-md animate-fade-right animate-duration-200 flex justify-between items-center ${
-        isActive ? "bg-secondary text-white opacity-100" : "opacity-50"
+        isActive ? "bg-secondary text-white opacity-100" : "opacity-80"
       }`}
     >
       <Link to={href} className="w-full px-[1rem] py-[0.7rem] text-left">

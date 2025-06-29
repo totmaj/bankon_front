@@ -10,13 +10,13 @@ const Features2: React.FC = () => {
 
   return (
    <div className=" w-full flex items-center justify-center overflow-hidden">
-      <div className="size-full relative md:h-[650px] h-[1000px] flex flex-col items-center justify-center">
+      <div className="size-full relative md:h-[450px] h-[1000px] flex flex-col items-center justify-center">
          <Shadow
           className="size-[90rem]  opacity-20 -top-[50px]  z-0"
           color="#fff"
         /> 
      
-         <div className=" flex justify-between flex-col m-8 p-8 gap-16 absolute">
+         <div className=" flex justify-between flex-col mx-8 px-8 gap-16 absolute">
 
           {features.map((feature, index) => (
             <FeatureItem2

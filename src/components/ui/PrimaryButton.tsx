@@ -20,7 +20,7 @@ const PrimaryButton: React.FC<param> = ({
   onClick,
 }) => {
   const baseClasses =
-    "primary-button w-full mt-4 px-4 py-[0.5rem] rounded-md transition-all duration-300 font-semibold cursor-pointer flex justify-center items-center ";
+    "primary-button w-full  px-4 py-[0.5rem] rounded-md transition-all duration-300 font-semibold cursor-pointer flex justify-center items-center ";
 
   const styleClasses = !outlined
     ? "bg-[var(--dark-color)] border border-[var(--primary-color)] text-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-[var(--dark-color)]"

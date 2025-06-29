@@ -5,6 +5,8 @@ import SignUp from "../pages/public/signup/SignUp";
 import Login from "../pages/public/login/Login";
 import Layout from "../layouts/Layout";
 import Monitoring from "../pages/public/monitoring/Monitoring";
+import Wallet from "../pages/public/wallet/Wallet";
+import Pools from "../pages/public/pools/Pools";
 
 export default function PublicRoutes() {
   return (
@@ -41,6 +43,32 @@ export default function PublicRoutes() {
         element={
           <Layout>
             <Monitoring />
+          </Layout>
+        }
+      />
+      <Route
+        path="/account"
+        element={
+          <Layout>
+            <Monitoring />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/wallet"
+        element={
+          <Layout>
+            <Wallet />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/pools"
+        element={
+          <Layout>
+            <Pools />
           </Layout>
         }
       />
