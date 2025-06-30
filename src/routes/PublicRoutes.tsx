@@ -7,6 +7,7 @@ import Layout from "../layouts/Layout";
 import Monitoring from "../pages/public/monitoring/Monitoring";
 import Wallet from "../pages/public/wallet/Wallet";
 import Pools from "../pages/public/pools/Pools";
+import Banks from "../pages/public/banks/Banks";
 
 export default function PublicRoutes() {
   return (
@@ -69,6 +70,15 @@ export default function PublicRoutes() {
         element={
           <Layout>
             <Pools />
+          </Layout>
+        }
+      />
+
+       <Route
+        path="/banks"
+        element={
+          <Layout>
+            <Banks />
           </Layout>
         }
       />

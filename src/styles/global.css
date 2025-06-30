@@ -57,7 +57,11 @@
   --color-gold-color: #f5c59f;
   --color-darkest-gray-color: #2a2c31;
   --color-gray-color: #979ba2;
-  --color-green-color:#28a745
+  --color-green-color:#28a745;
+  --color-light-gray-color: #b7b7b7;
+  --color-gray-dark:#282929;
+  --color-gray-light:#a4c4c4;
+  --color-orange-dark:#8b5e3c;
 }
 * {
   font-family: "Quicksand", sans-serif;
