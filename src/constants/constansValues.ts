@@ -38,11 +38,7 @@ export const sidebarItems = [
   //   href: "/monitoring",
   //   icon: "/assets/icons/sidebar/alcx_med.svg",
   // },
-  {
-    title: "Loan",
-    href: "/loan",
-    icon: "/assets/icons/sidebar/vaults_med.svg",
-  },
+
   {
     title: "Pools",
     href: "/pools",
@@ -194,7 +190,7 @@ export const bankItems = [
     title: "Royal_kmn",
     profit: "13%",
     loan: "Yes",
-    logo: "/assets/icons/pools/logo01.png",
+    logo: "/assets/icons/pools/logo01.svg",
     desc: "Core Decentralized Finance Services with high-yield opportunities across multiple liquidity pools and smart contract-based operations.",
     level: "Premium",
     services: [
@@ -215,7 +211,7 @@ export const bankItems = [
     title: "Finexa",
     profit: "11%",
     loan: "Yes",
-    logo: "/assets/icons/pools/logo02.png",
+    logo: "/assets/icons/pools/logo02.svg",
     desc: "A reliable platform offering mid-tier returns on liquidity pools with support for major DeFi protocols and yield strategies.",
     level: "Standard",
     services: [
@@ -231,7 +227,7 @@ export const bankItems = [
     title: "Zephyr Finance",
     profit: "7%",
     loan: "No",
-    logo: "/assets/icons/pools/logo03.png",
+    logo: "/assets/icons/pools/logo03.svg",
     desc: "Beginner-friendly platform for users looking to start with basic liquidity pool investments and minimal risk.",
     level: "Basic",
     services: [
@@ -246,7 +242,7 @@ export const bankItems = [
     title: "Nebula Capital",
     profit: "19%",
     loan: "Yes",
-    logo: "/assets/icons/pools/logo04.png",
+    logo: "/assets/icons/pools/logo04.svg",
     desc: "High-performance DeFi bank offering access to advanced liquidity pools and hybrid investment strategies with top security standards.",
     level: "Premium",
     services: [
@@ -257,6 +253,40 @@ export const bankItems = [
       { key: "Asset Tokenization", value: "Yes" },
       { key: "Decentralized Insurance", value: "Yes" },
       { key: "Derivatives", value: "Available" },
+    ],
+  },
+
+  {
+    title: "Solara Finance",
+    profit: "15%",
+    loan: "Yes",
+    logo: "/assets/icons/pools/logo05.svg",
+    desc: "Efficient and secure DeFi banking platform focusing on cross-chain integration and stable return models for investors.",
+    level: "Standard",
+    services: [
+      { key: "Profitability", value: "15% average for liquidity pools" },
+      { key: "Staking & Yield Farming", value: "Yes" },
+      { key: "Cross-Border Payments", value: "Yes" },
+      { key: "Liquidity Pools", value: "Level 2, Level 3" },
+      { key: "Asset Tokenization", value: "Yes" },
+      { key: "Multi-Chain Support", value: "Ethereum, Binance Smart Chain" },
+    ],
+  },
+
+  {
+    title: "Orbit Vaults",
+    profit: "25%",
+    loan: "Yes",
+    logo: "/assets/icons/pools/logo06.svg",
+    desc: "Next-gen DeFi vaults with automated yield optimization, AI-driven analytics, and high-security staking environments.",
+    level: "Premium",
+    services: [
+      { key: "Profitability", value: "25% average for liquidity pools" },
+      { key: "Staking & Yield Farming", value: "AI Optimized" },
+      { key: "Decentralized Insurance", value: "Yes" },
+      { key: "Liquidity Pools", value: "Level 4, Level 5" },
+      { key: "Asset Tokenization", value: "Yes" },
+      { key: "Analytics Dashboard", value: "Real-time insights" },
     ],
   },
 ];

@@ -33,7 +33,7 @@ const BanksItem: React.FC<Param> = ({ item }) => {
           </div>
           {item?.level === "Premium" && (
             <span className="bg-primary text-black text-sm rounded-lg w-20 text-center p-1 ml-2 mb-[3px] mr-4">
-              <span className="">{item?.level}</span>
+              <span className="font-bold">{item?.level}</span>
             </span>
           )}
 
@@ -45,7 +45,7 @@ const BanksItem: React.FC<Param> = ({ item }) => {
 
           {item?.level === "Standard" && (
             <span className="bg-gold-color  text-sm rounded-lg w-20  text-center  p-1 text-black mr-4">
-              <span className="">{item?.level}</span>
+              <span className="font-bold">{item?.level}</span>
             </span>
           )}
         </div>
